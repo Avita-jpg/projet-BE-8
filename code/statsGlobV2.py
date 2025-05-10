@@ -99,26 +99,26 @@ def create_heatmap(df):
     st_folium(m, use_container_width=True, height=600)
 
 def afficher_statistiques_temps(df):
-    # --- 📈 Évolution des tweets dans le temps ---
+    # --- 📈 Évolution des tweets dans le temps par topic ---
 
-    # Vérifiez que la colonne 'created_at' est bien au format datetime
-    if "created_at" in df.columns:
+    # Vérifiez que les colonnes 'created_at' et 'topic' sont présentes
+    if "created_at" in df.columns and "topic" in df.columns:
         df["date"] = df["created_at"].dt.date  # Extraire uniquement la date
-        tweets_per_day = df.groupby("date").size().reset_index(name="Nombre_de_tweets")
+        tweets_per_day_topic = df.groupby(["date", "topic"]).size().reset_index(name="Nombre_de_tweets")
 
         fig_time = px.line(
-            tweets_per_day,
+            tweets_per_day_topic,
             x="date",
             y="Nombre_de_tweets",
-            title=" " \
-            "",
-            labels={"date": "Date", "Nombre_de_tweets": "Nombre de Tweets"},
+            color="topic",
+            title="Évolution des tweets dans le temps par topic",
+            labels={"date": "Date", "Nombre_de_tweets": "Nombre de Tweets", "topic": "Topic"},
             markers=True
         )
         fig_time.update_layout(title_x=0.5, xaxis_title="Date", yaxis_title="Nombre de Tweets")
         st.plotly_chart(fig_time, use_container_width=True)
     else:
-        st.warning("La colonne 'created_at' est manquante ou mal formatée.")
+        st.warning("Les colonnes 'created_at' ou 'topic' sont manquantes ou mal formatées.")
 
 def afficherHashtag(dataframes):
     # Vérifie la présence du fichier nécessaire
