@@ -132,5 +132,6 @@ def afficher_comparateur_crises(dataframes, labels):
     )
     fig_category.update_layout(xaxis_tickangle=-45, title_x=0.5)
     st.plotly_chart(fig_category, use_container_width=True)
+    #test
 
 
