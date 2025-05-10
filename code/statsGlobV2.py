@@ -50,6 +50,8 @@ def afficher_statistiques_globales(dataframes,labels):
         create_heatmap(df)
     with col4: 
         afficherHashtag(dataframes)
+    afficher_repartition_par_topic(df)
+
 def create_heatmap(df):
     geo_df = df.dropna(subset=['latitude', 'longitude'])
 
@@ -160,3 +162,38 @@ def afficherHashtag(dataframes):
     )
 
     st.plotly_chart(fig, use_container_width=True)
+def afficher_repartition_par_topic(df):
+    # --- 🥧 Répartition des tweets par topic ---
+    st.subheader("📚 Répartition des tweets par topic")
+
+    # Vérifier que la colonne 'topic' est présente
+    if "topic" not in df.columns:
+        st.warning("La colonne 'topic' est manquante dans le DataFrame.")
+        return
+
+    # Comptage des tweets par topic
+    topic_counts = df["topic"].value_counts().reset_index()
+    topic_counts.columns = ["Topic", "Nombre_de_tweets"]
+
+    # --- 📊 Graphique Barres ---
+    fig_topic_bar = px.bar(
+        topic_counts,
+        x="Topic",
+        y="Nombre_de_tweets",
+        text_auto=True,
+        title="Répartition des tweets par topic",
+        labels={"Topic": "Topic", "Nombre_de_tweets": "Nombre de Tweets"}
+    )
+    fig_topic_bar.update_layout(xaxis_tickangle=-45, title_x=0.5)
+    st.plotly_chart(fig_topic_bar, use_container_width=True)
+
+    # --- 🥧 Graphique Camembert ---
+    fig_topic_pie = px.pie(
+        topic_counts,
+        values="Nombre_de_tweets",
+        names="Topic",
+        title="Répartition des tweets par topic",
+        hole=0.4
+    )
+    fig_topic_pie.update_traces(textinfo="percent+label")
+    st.plotly_chart(fig_topic_pie, use_container_width=True)
