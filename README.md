@@ -8,3 +8,5 @@ L’objectif principal de ce projet, encadré par l’enseignante-chercheuse Lyn
 
 ## Lancer l'application
 Exécuter `git clone https://github.com/Avita-jpg/projet-BE-8.git` pour avoir une copie locale du projet. Lancer `dashboard.exe` pour installer les dépendances et lancer l'application en local. Un onglet du navigateur s'ouvrira ensuite. 
+
+> Le code de l'application qui est lancée avec l'exécutable fourni est celui sous le répertoire `code2`. C'est la version principale du projet. Le répertoire `code` contient l'ancienne version qui contient tous les affichages, y compris ceux qui ne sont pas sur la version principale. 
