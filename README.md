@@ -7,3 +7,4 @@ Lors de situations de crise ou d'urgence, les réseaux sociaux jouent un rôle d
 L’objectif principal de ce projet, encadré par l’enseignante-chercheuse Lynda Lechani, est de décrire et d’analyser la structure et le contenu d’un réseau social dans le contexte d’une urgence. Plus précisément, nous exploitons des données réelles issues du réseau social Twitter (actuellement X), fournies dans le cadre de l'initiative TREC  Incident Streams du NIST. Ce jeu de données est préalablement filtré, structuré et annoté, ce qui nous permet de concentrer notre analyse sur l’analyse de la dynamique des messages en situation de crise.
 
 ## Lancer l'application
+Exécuter `git clone ...` pour avoir une copie locale du projet. Lancer `dashboard.exe` pour installer les dépendances et lancer l'application sur un navigateur. 
