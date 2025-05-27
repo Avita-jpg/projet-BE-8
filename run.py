@@ -27,14 +27,8 @@ print("✅ Toutes les dépendances sont installées.")
 
 # --- 3. Lancer l'application Streamlit ---
 try:
-    version=input("V1 ou V2 (1,2)")
-    if version=="2":
-        os.chdir("code2")
-        print("🚀 Lancement de Streamlit : menu.py")
-        subprocess.run(["streamlit", "run", "menu.py"])
-    else:
-        os.chdir("code")
-        print("🚀 Lancement de Streamlit : menu.py")
-        subprocess.run(["streamlit", "run", "menu.py"])
+    os.chdir("code2")
+    print("🚀 Lancement de Streamlit : menu.py")
+    subprocess.run(["streamlit", "run", "menu.py"])
 except Exception as e:
     print(f"❌ Erreur pendant le lancement : {e}")
