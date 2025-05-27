@@ -1,9 +1,9 @@
 # projet-BE-8
 Dépôt du projet BE - sujet 8 - Dashboard gestion de crises
 
-## Comment utiliser le dépôt:
-Chacun peut charger ses fichiers de travail. Idéalement, il faut avoir un fichier .py par élément du dashboard puis l'équipe visualisation - intégration mettra les éléments dans l'application finale Streamlit.
+## Descripton
+Lors de situations de crise ou d'urgence, les réseaux sociaux jouent un rôle de plus en plus central en tant que canaux de communication directe entre les citoyens et les autorités. Les messages publiés en temps réel sur ces plateformes peuvent contenir des demandes d’aide, des signalements d’incidents, ou encore des informations cruciales sur l’évolution de la situation. Face à ça, il est essentiel pour les organismes de secours de pouvoir analyser rapidement et efficacement ces messages afin de prioriser les interventions et de coordonner les actions de secours.
 
-Faire python3 run.py pour executer l'application.
+L’objectif principal de ce projet, encadré par l’enseignante-chercheuse Lynda Lechani, est de décrire et d’analyser la structure et le contenu d’un réseau social dans le contexte d’une urgence. Plus précisément, nous exploitons des données réelles issues du réseau social Twitter (actuellement X), fournies dans le cadre de l'initiative TREC  Incident Streams du NIST. Ce jeu de données est préalablement filtré, structuré et annoté, ce qui nous permet de concentrer notre analyse sur l’analyse de la dynamique des messages en situation de crise.
 
-> REMARQUE: Avant de travailler assurez vous d'avoir la dernière version du dépôt en faisant 'git pull' 
+## Lancer l'application
