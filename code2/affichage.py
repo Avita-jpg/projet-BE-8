@@ -28,7 +28,7 @@ def accueil():
         - Gravité
         - Demande d'aide
         - Top influenceur
-        - (À venir) Analyser les utilisateurs, les catégories, la localisation, etc.
+        - Analyser les utilisateurs, les catégories, la localisation, etc.
         """
     )
 def vueEnsemble(dataframes):
